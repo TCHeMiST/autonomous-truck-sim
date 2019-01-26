@@ -1,0 +1,919 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material2 "LincolnMKZWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+    }
+    ContactProperties {
+      material2 "RangeRoverSportSVRWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+    }
+    ContactProperties {
+      material2 "ToyotaPriusWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+    }
+    ContactProperties {
+      material2 "TruckWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+    }
+    ContactProperties {
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.969446169161975 0.18764602995304117 0.15799712826514853 0.28515120870200095
+  position -102.68581114387501 6.3101129834393745 240.14355435220907
+  follow "vehicle(1)"
+  followOrientation TRUE
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Solid {
+  translation 56.43933657025364 0.8979119999999999 16.970170635265426
+  rotation -5.158020425714745e-17 1 2.9250772800269165e-17 -1.5697601429171302
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+      }
+      geometry DEF GRASS Box {
+        size 1.5 2 8
+      }
+    }
+  ]
+  name "solid(9)"
+  boundingObject USE GRASS
+  physics Physics {
+  }
+  linearVelocity 1.9787753229301594e-17 -4.656612873076995e-16 -1.7094323507752728e-17
+  angularVelocity -7.542889631357942e-18 -7.786742944387415e-19 -2.3468911254634178e-18
+}
+Solid {
+  translation 53.18171918180639 0.9134820000000138 21.095065146512503
+  rotation 0.7723885716935169 -0.009776396688766712 0.6350750478368936 9.241057484509685e-18
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+      }
+      geometry DEF GRASS Box {
+        size 1.5 2 6.5
+      }
+    }
+  ]
+  name "solid(8)"
+  boundingObject USE GRASS
+  physics Physics {
+  }
+  linearVelocity -1.7572377622644567e-17 2.364126536179846e-13 -6.21303354922681e-18
+  angularVelocity 3.717545412186526e-17 -9.009043727244084e-20 2.2924863375150256e-17
+}
+Solid {
+  translation 56.30206782997503 0.8979119999999999 -8.672335569686613
+  rotation 8.808648986708826e-18 1 8.336895503001316e-18 1.5711151853097005
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+      }
+      geometry DEF GRASS Box {
+        size 1.5 2 8
+      }
+    }
+  ]
+  name "solid(7)"
+  boundingObject USE GRASS
+  physics Physics {
+  }
+  linearVelocity -6.988486115456625e-18 4.2685618003209155e-16 3.3728791763305853e-17
+  angularVelocity 2.0919699416154215e-17 1.522179787311831e-19 1.1121878868064251e-17
+}
+Solid {
+  translation 30 0 26
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/light_asphalt.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 100 50
+        }
+      }
+      geometry DEF BORDEUR Box {
+        size 62 0.1 3
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE BORDEUR
+}
+Solid {
+  translation -55.5 0 26
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/light_asphalt.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 100 50
+        }
+      }
+      geometry DEF BORDEUR Box {
+        size 87 0.1 3
+      }
+    }
+  ]
+  name "solid(12)"
+  boundingObject USE BORDEUR
+}
+Solid {
+  translation -14.75 0 -18
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/light_asphalt.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 100 50
+        }
+      }
+      geometry DEF BORDEUR Box {
+        size 151.5 0.1 3
+      }
+    }
+  ]
+  name "solid(10)"
+  boundingObject USE BORDEUR
+}
+Solid {
+  translation 62.5 0 3.9999999926638075
+  rotation 0 0.9999999999999999 0 4.712388966
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/light_asphalt.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 100 50
+        }
+      }
+      geometry DEF BORDEUR Box {
+        size 47 0.1 3
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject USE BORDEUR
+}
+Solid {
+  translation -92.03999999999998 0 3.9999977696538043
+  rotation 0 0.9999999999999999 0 4.712388966
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/light_asphalt.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 100 50
+        }
+      }
+      geometry DEF BORDEUR Box {
+        size 47 0.1 3
+      }
+    }
+  ]
+  name "solid(11)"
+  boundingObject USE BORDEUR
+}
+Solid {
+  translation 45.08220485809138 0.897912 4.004508115173169
+  rotation 0.7874172991529487 -0.08163260071925266 0.6109910928110874 -2.816872681352721e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+      }
+      geometry DEF GRASS Box {
+        size 1.5 2 8
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE GRASS
+  physics Physics {
+  }
+  linearVelocity 4.268808897362445e-18 -3.492459654807956e-16 2.457219950543906e-18
+  angularVelocity 1.069993766791676e-18 -7.082701482442284e-19 -1.1641532182693123e-18
+}
+Solid {
+  translation 53.06613677426582 0.9134820000000138 -12.73981647186545
+  rotation 0.8341772109787181 0.019467193265670667 0.551152800110935 6.6551020684023216e-18
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+      }
+      geometry DEF GRASS Box {
+        size 1.5 2 6.5
+      }
+    }
+  ]
+  name "solid(6)"
+  boundingObject USE GRASS
+  physics Physics {
+  }
+  linearVelocity 1.757237762264456e-17 2.364126536179846e-13 -6.213033549226807e-18
+  angularVelocity 3.717545412186526e-17 9.009043727244132e-20 -2.2924863375150256e-17
+}
+Solid {
+  translation -2.090000000000014 0.897912 4.260000000000001
+  rotation 0.9197168563309047 0.07078274631758144 -0.3861485556162794 -4.133867315244277e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+      }
+      geometry DEF GRASS Box {
+        size 1.5 2 8
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE GRASS
+  physics Physics {
+  }
+  linearVelocity -1.672041394651229e-18 -3.492459654808491e-16 -6.993847185857149e-18
+  angularVelocity -9.843942654483456e-18 -3.6762220854783174e-19 -2.182787284255029e-17
+}
+Solid {
+  translation -10.720000000000013 0.897912 4.260000000000001
+  rotation 0.7936086944592944 0.1270299185383319 -0.5950198651093584 -4.2557672925996896e-17
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+      }
+      geometry DEF GRASS Box {
+        size 1.5 2 8
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject USE GRASS
+  physics Physics {
+  }
+  linearVelocity -1.672017103460577e-18 -3.492459654808491e-16 -6.99372426541865e-18
+  angularVelocity -9.843942654483456e-18 -3.6762243377752967e-19 -2.182787284255029e-17
+}
+StraightRoadSegment {
+  translation -3 0 12
+  rotation 0 1 0 1.5708003061004252
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 48
+}
+StraightRoadSegment {
+  translation 65 0 36
+  rotation 0 1 0 4.712390306100425
+  name "road(4)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 154
+}
+Forest {
+  translation 43.944418618320334 -0.31 -31.173965699171
+  rotation 0 1 0 1.0471975479999998
+  shape [
+    -20 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+StraightRoadSegment {
+  translation 48.5 0 -7.5
+  name "road(2)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 23
+}
+StraightRoadSegment {
+  translation -6.5 0 -7.5
+  name "road(3)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 40
+}
+CitroenCZero {
+  hidden position_0_0 1.7498478963833025e-12
+  hidden position2_0_0 -1.2281131664065809e-05
+  hidden position_0_1 3.97742575129086e-12
+  hidden position2_0_1 -1.2360156619509808e-05
+  hidden position_0_2 -2.1006645312127148e-08
+  hidden position_0_3 3.180560249847268e-08
+  hidden rotation_1 1.4248262653850452e-07 -0.9999999999999899 -8.749239481916425e-13 1.2281124473835883e-05
+  hidden rotation_2 -3.217941223302846e-07 0.9999999999999483 -1.988712875645327e-12 1.2360169643506735e-05
+  hidden rotation_3 0 -0.9999999999999999 0 8.035581566520246e-07
+  hidden rotation_4 0 -1 0 2.9802322387695313e-08
+  translation 5.990049177812636 0.08811598428362852 -11.649701336057472
+  rotation 1.4350172522141653e-05 0.9999999961954027 8.604224150354146e-05 -3.141580451787764
+  name "vehicle(6)"
+}
+LincolnMKZ {
+  hidden position_0_0 -1.419568742210584e-10
+  hidden position2_0_0 9.008986478611732e-08
+  hidden position_0_1 1.419568404034471e-10
+  hidden position2_0_1 9.0089865458325e-08
+  hidden position_0_2 7.435057168230192e-08
+  hidden position_0_3 7.435083499190717e-08
+  hidden rotation_1 -0.0004457258666145036 0.999999900664221 -2.3612709973311265e-10 1.2859969741339558e-06
+  hidden rotation_2 -0.0004457420837059184 -0.9999999006569925 2.361347797771481e-10 1.2859969741339558e-06
+  hidden rotation_3 0 -1 0 1.0207023495163856e-06
+  hidden rotation_4 0 1 0 1.0207023495163856e-06
+  translation 15.770000025462473 0.30024532422733796 -14.351719458430368
+  rotation 0.9999999999927264 -3.814048958962314e-06 1.2780790638489265e-08 0.0031235573869766694
+  name "vehicle(5)"
+}
+StraightRoadSegment {
+  translation -83.5 0 -0.5
+  name "road(11)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 9
+}
+StraightRoadSegment {
+  translation -104 0 51
+  name "road(6)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 180
+}
+StraightRoadSegment {
+  translation -3 0 -4
+  rotation 0 1 0 1.5708003061004252
+  name "road(1)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 48
+}
+StraightRoadSegment {
+  translation -87 0 -4
+  rotation 0 1 0 1.5708003061004252
+  name "road(9)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 77
+  locked FALSE
+}
+StraightRoadSegment {
+  translation -87 0 12
+  rotation 0 1 0 1.5708003061004252
+  name "road(10)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 77
+  locked FALSE
+}
+StraightRoadSegment {
+  translation -117.5 0 215
+  rotation 0 1 0 1.5708003061004252
+  name "road(7)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  locked FALSE
+}
+TeslaModel3 {
+  hidden position_0_0 -1.122399707934356e-06
+  hidden position2_0_0 0.0003575721084610237
+  hidden position_0_1 1.1223997082054633e-06
+  hidden position2_0_1 0.000357572108676743
+  hidden position_0_2 -0.00032439676694452266
+  hidden position_0_3 -0.0003243967669988024
+  hidden rotation_1 -0.9999999680357009 0.00017878539370478393 0.00017878584975211244 1.570801154364007
+  hidden rotation_2 -0.999999968035701 -0.0001787853938126433 -0.00017878584985997175 1.5708011543640077
+  hidden rotation_3 -0.9999999736917814 -0.00016219778484067421 -0.0001621983806274996 1.5708000263082198
+  hidden rotation_4 -0.9999999736917814 0.00016219778486781388 0.00016219838065463946 1.5708000263082198
+  translation -107.76999999999958 0.25994394815967126 202.17960912533425
+  rotation -0.9999999999999999 1.1441132170987964e-10 -1.9498312151358382e-10 0.0073785346448673635
+  name "vehicle(9)"
+}
+StraightRoadSegment {
+  translation -117.5 0 227.5
+  rotation 0 1 0 1.5708003061004252
+  name "road(8)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  locked FALSE
+}
+Truck {
+  hidden position_0_0 -1.0978585494316865e-09
+  hidden position2_0_0 -7.167118205049544e-07
+  hidden position_0_1 1.097858464037225e-09
+  hidden position2_0_1 -7.167118203019915e-07
+  hidden position_0_2 5.118962451638398e-07
+  hidden position_0_3 5.118962450583451e-07
+  hidden rotation_1 -0.001531797341709875 -0.9999988267977638 5.489286307107906e-10 7.164964246852024e-07
+  hidden rotation_2 -0.0015317972229965213 0.9999988267979456 -5.489285880137097e-10 7.164964246852024e-07
+  hidden rotation_3 0 1 0 5.118716966306483e-07
+  hidden rotation_4 0 -1 0 5.118716966306483e-07
+  translation 10.289967560268868 0.4791372879855287 1.0060652680754245
+  rotation -0.999986595617549 0.005177640933557957 -2.4891512855969463e-05 -0.009615056380029045
+  trailer NULL
+  controller ""
+}
+ParkingLines {
+  translation -1 0 0
+  numberOfCarParks 18
+  carParkLength 8.2
+  carParkWidth 2.5
+}
+ParkingLines {
+  translation -12.110000000000003 0 8
+  rotation 0 1 0 3.141592653589793
+  numberOfCarParks 27
+  carParkLength 8.2
+  carParkWidth 2.5
+}
+ParkingLines {
+  translation 60.65999999999625 0 -6.999997777710913
+  rotation 0 1 0 -1.5707996938995747
+  numberOfCarParks 9
+  carParkLength 8.2
+  carParkWidth 2.5
+}
+ParkingLines {
+  translation -90.5 0 -16
+  numberOfCarParks 57
+  carParkLength 8.2
+  carParkWidth 2.5
+}
+ParkingLines {
+  translation -1 0 16
+  numberOfCarParks 21
+  carParkLength 8.2
+  carParkWidth 2.5
+}
+ParkingLines {
+  translation -87 0 16
+  numberOfCarParks 30
+  carParkLength 8.2
+  carParkWidth 2.5
+}
+BigSassafras {
+  translation 57.23 0 20.969999999999988
+}
+DEF Parking Solid {
+  translation -13 -0.01 2.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "textures/light_asphalt.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 500 500
+        }
+      }
+      geometry DEF GROUND_PLANE Plane {
+        size 160 44
+      }
+    }
+  ]
+  boundingObject USE GROUND_PLANE
+  locked TRUE
+}
+DEF GRASS Solid {
+  translation 0 -0.1 0
+  children [
+    DEF GRASS_PLANE Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 500 500
+        }
+      }
+      geometry Plane {
+        size 500 500
+      }
+    }
+  ]
+  name "solid(15)"
+  boundingObject USE GRASS_PLANE
+  locked TRUE
+}
+StreetLight {
+  translation -98.24999847905876 0 62.48999978303113
+  rotation 0 -1 0 4.712389004359173
+  name "street light(4)"
+}
+StreetLight {
+  translation -98.2499991570572 0 90.7699997830311
+  rotation 0 -1 0 4.712389004359173
+  name "street light(3)"
+}
+StreetLight {
+  translation -98.25000108700308 0 171.26999978303107
+  rotation 0 -1 0 4.712389004359173
+}
+StreetLight {
+  translation -98.25000038526996 0 141.99999978303111
+  rotation 0 -1 0 4.712389004359173
+  name "street light(1)"
+}
+StreetLight {
+  translation -98.24999976744752 0 116.22999978303108
+  rotation 0 -1 0 4.712389004359173
+  name "street light(2)"
+}
+Museum {
+  translation -2.1500000000000052 0 119.67000000000006
+}
+RandomBuilding {
+  translation -45.96000000000001 0 118.94000000000007
+  name "building(1)"
+}
+SimpleBuilding {
+  translation -23.209999999999997 0 91.04999999999997
+}
+Forest {
+  translation -74.69 -0.41000000000000003 70.12
+  rotation 0 1 0 5.7595865139999995
+  shape [
+    -20 -10
+    20 -10
+    0 26
+  ]
+}
+Forest {
+  translation -80.71464636179009 -0.41000000000000003 212.51498915416715
+  rotation 0 1 0 5.7595865139999995
+  shape [
+    -20 -10
+    20 -10
+    0 26
+  ]
+}
+Forest {
+  translation -135.57 -0.14 70.12
+  shape [
+    -20 -10
+    14 -10
+    0 25
+  ]
+}
+Forest {
+  translation -74.69 -0.42000000000000004 153.86
+  shape [
+    -20 -10
+    22 -10
+    0 25
+  ]
+}
+Forest {
+  translation -130.08999999999997 -0.55 124.08999999999999
+  shape [
+    -18 -8
+    20 -10
+    0 25
+  ]
+}
+Oak {
+  translation 13.930000000000005 0 30.14
+  name "oak tree(12)"
+}
+Oak {
+  translation 4.260000000000013 0 30.14
+  name "oak tree(11)"
+}
+Oak {
+  translation -37.069999999999986 0 30.14
+}
+Oak {
+  translation -89.77999999999997 0 30.14
+  name "oak tree(1)"
+}
+Oak {
+  translation 49.330000000000005 0 30.14
+  name "oak tree(2)"
+}
+Oak {
+  translation 35.670000000000016 0 30.14
+  name "oak tree(8)"
+}
+Oak {
+  translation 25.010000000000023 0 30.14
+  name "oak tree(9)"
+}
+Oak {
+  translation 60.64999999999999 0 30.14
+  name "oak tree(10)"
+}
+Oak {
+  translation -65.9 0 30.14
+  name "oak tree(3)"
+}
+Oak {
+  translation -51.57000000000003 0 30.14
+  name "oak tree(4)"
+}
+Oak {
+  translation -26.13999999999999 0 30.14
+  name "oak tree(5)"
+}
+Oak {
+  translation -79.62000000000002 0 30.14
+  name "oak tree(6)"
+}
+Oak {
+  translation -13.590000000000005 0 30.14
+  name "oak tree(7)"
+}
+Forest {
+  translation -95.2900399868769 -0.31 -33.23280965760185
+  rotation 0 1 0 1.5707963219999996
+  shape [
+    -20 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+Forest {
+  translation -114.9253679580436 -0.31 15.238742898272271
+  rotation 0 1 0 2.3561944829999995
+  shape [
+    -20 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+Forest {
+  translation 88.3172705149425 -0.31 4.710000282314824
+  rotation 0 1 0 1.0471975479999998
+  shape [
+    -20 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+Forest {
+  translation 0 -0.31 -46.279999999999994
+  rotation 0 1 0 1.0471975479999998
+  shape [
+    -20 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+Forest {
+  translation -27.6600000396918 -0.31 -31.714730414714552
+  rotation 0 -1 0 5.235987778359173
+  shape [
+    -20 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+Forest {
+  translation -69.75074254647504 -0.31 -36.48920768194148
+  rotation 0 1 0 1.3089969350000001
+  shape [
+    -20 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+Forest {
+  translation -33.021548585357515 -0.31 -65.34500010555661
+  rotation 0 1 0 1.0471975479999998
+  shape [
+    -24 -10
+    20 -10
+    10 39
+  ]
+  density 0.1
+}
+ToyotaPrius {
+  hidden position_0_0 9.367218112288374e-11
+  hidden position2_0_0 -6.032076053725263e-08
+  hidden position_0_1 -9.367256970094351e-11
+  hidden position2_0_1 -6.032076114527313e-08
+  hidden position_0_2 -4.411494493268587e-05
+  hidden position_0_3 -4.411494500129975e-05
+  hidden rotation_1 0.0020914813359353044 -0.9999978128505189 -3.039964652441386e-11 1.7881393432617193e-07
+  hidden rotation_2 0.0020914766001372746 0.9999978128604238 3.0400011226174224e-11 1.7881393432617193e-07
+  hidden rotation_3 0 -1 0 4.411494748598433e-05
+  hidden rotation_4 0 1 0 4.411494748598433e-05
+  translation 54.754281464695104 0.2556143195559282 10.354362322570777
+  rotation -0.0021732741593566357 0.9999968512480005 0.0012547404162965064 1.0472002749056513
+  name "vehicle(8)"
+}
+BmwX5 {
+  hidden position_0_0 2.968257727046569e-10
+  hidden position2_0_0 -1.5308424595770115e-07
+  hidden position_0_1 -2.968259786801577e-10
+  hidden position2_0_1 -1.5308424600974272e-07
+  hidden position_0_2 -0.0001418817438858932
+  hidden position_0_3 -0.0001418817438917338
+  hidden rotation_1 0.0026573548448971637 -0.9999964692263809 -9.295033027010829e-11 4.3901562281418636e-07
+  hidden rotation_2 0.002657354728906344 0.9999964692266892 9.295044965688039e-11 4.3901562281418636e-07
+  hidden rotation_3 0 -1 0 0.00014188174261625745
+  hidden rotation_4 0 1 0 0.00014188174261625745
+  translation -23.280000000000005 0.30368774642596974 1.1091041308982315
+  rotation -1 3.825071365639571e-14 -1.815200115307337e-14 0.0047406144994499785
+  name "vehicle(7)"
+}
+RangeRoverSportSVR {
+  hidden position_0_0 -4.09545428838288e-10
+  hidden position2_0_0 3.9200207731438097e-07
+  hidden position_0_1 4.095452755962328e-10
+  hidden position2_0_1 3.920020773039722e-07
+  hidden position_0_2 -2.0343215290097305e-07
+  hidden position_0_3 -2.0343215378915147e-07
+  hidden rotation_1 -0.0010921520854607662 0.9999994036017331 -3.0938542202306134e-10 1.506712992163281e-06
+  hidden rotation_2 -0.0010921523084704728 -0.9999994036014899 3.0938532543614614e-10 1.506712992163281e-06
+  hidden rotation_3 0 -1 0 1.3634358923075313e-06
+  hidden rotation_4 0 1 0 1.3634358923075313e-06
+  translation 1.500021274383967e-16 0.28882832033310335 17.62765683586641
+  rotation 1 -4.7133881293180875e-15 -3.917690380063143e-15 0.009612963985046508
+  name "vehicle(4)"
+}
+TeslaModel3 {
+  hidden position_0_0 -1.1224002115914332e-06
+  hidden position2_0_0 0.000357576229155553
+  hidden position_0_1 1.1224002122148353e-06
+  hidden position2_0_1 0.000357576229373168
+  hidden position_0_2 -0.00032439679075135786
+  hidden position_0_3 -0.00032439679081169604
+  hidden rotation_1 -0.9999999680349642 0.00017878745404434902 0.000178787910096843 1.570801154365248
+  hidden rotation_2 -0.9999999680349642 -0.00017878745415315643 -0.00017878791020565032 1.5708011543652465
+  hidden rotation_3 -0.9999999736917778 -0.00016219779674404755 -0.00016219839253091636 1.5708000263082227
+  hidden rotation_4 -0.9999999736917776 0.0001621977967742166 0.00016219839256108572 1.5708000263082207
+  translation -15.700000045741957 0.2599439415502723 4.769827134374224
+  rotation -1.840882838318315e-11 0.9999931946529269 0.0036892611500821695 3.1415926440009008
+  name "vehicle(3)"
+}
+ToyotaPrius {
+  hidden position_0_0 9.367236375830197e-11
+  hidden position2_0_0 -6.032076057248979e-08
+  hidden position_0_1 -9.367234162457882e-11
+  hidden position2_0_1 -6.032076081101417e-08
+  hidden position_0_2 -4.411494488526103e-05
+  hidden position_0_3 -4.4114944886136264e-05
+  hidden rotation_1 0.002091536025267698 -0.9999978127361355 -3.039633976614366e-11 1.7881393432617193e-07
+  hidden rotation_2 0.002091529183889627 0.9999978127504444 3.03964165240796e-11 1.7881393432617193e-07
+  hidden rotation_3 0 -1 0 4.411494748598433e-05
+  hidden rotation_4 0 1 0 4.411494748598433e-05
+  translation -38.389999999999986 0.2556143195559287 17.449644177579913
+  rotation -1 1.9164065753553342e-12 -3.493256378817756e-14 0.0025094874173851264
+  name "vehicle(2)"
+}
+Truck {
+  hidden position_0_0 -1.1002940399074355e-09
+  hidden position2_0_0 -7.254026626881639e-07
+  hidden position_0_1 1.1004223504640536e-09
+  hidden position2_0_1 -7.254027796607157e-07
+  hidden position_0_2 5.110861442262243e-07
+  hidden position_0_3 5.110917690597558e-07
+  hidden rotation_1 -0.001516802778350895 -0.9999988496540041 5.501463870942962e-10 7.251217997429673e-07
+  hidden rotation_2 -0.0015169794149636458 0.9999988493860654 -5.502105421513816e-10 7.251217997429673e-07
+  hidden rotation_3 0 1 0 5.110033809984414e-07
+  hidden rotation_4 0 -1 0 5.110033809984414e-07
+  translation -102.88140434378091 0.4988562851056431 228.91592423894994
+  rotation 0 1 0 3.141592653589793
+  trailer NULL
+  name "vehicle(1)"
+  controller "ros"
+  controllerArgs "--name=autonomous_truck"
+  sensorsSlotFront [
+    VelodynePuck {
+      translation 0.24000000000000002 0.05 3.469446951953614e-18
+    }
+    Camera {
+      translation 0.30000000000000004 0 -0.10000000000000002
+    }
+    SickLms291 {
+      translation -0.12 0 -0.08
+    }
+  ]
+  sensorsSlotTop [
+    VelodyneHDL-64E {
+      translation 0 -0.33000000000000007 -1.6000000000000005
+    }
+  ]
+  sensorsSlotCenter [
+    InertialUnit {
+    }
+    GPS {
+    }
+  ]
+}
+CurvedRoadSegment {
+  translation -89 0 51
+  rotation 0 1 0 3.141592644
+  name "road(5)"
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  curvatureRadius 15
+}
