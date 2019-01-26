@@ -11,7 +11,7 @@ First, install the latest Webots version [here](https://cyberbotics.com/#downloa
 
 ### Download NUParking world
 
-Copy ```parking_new.wbt``` file anywhere and open it through File-Open World.
+Copy ```NUParking.wbt``` file from ```src``` folder anywhere and open it through File-Open World.
 
 Try runnning simulation. If everything is ok, proceed to next step.
 
