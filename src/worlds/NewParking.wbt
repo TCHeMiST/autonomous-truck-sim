@@ -1,0 +1,263 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+  contactProperties [
+    ContactProperties {
+      material2 "TruckWheels"
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+    }
+    ContactProperties {
+      coulombFriction [
+        8
+      ]
+      softCFM 1e-05
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.9180110756999111 -0.39398448855088175 -0.04507646474150346 0.4142914757314846
+  position -70.4986026192132 59.86377423395858 226.94507553198682
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+DEF GRASS Solid {
+  children [
+    DEF GRASS_PLANE Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "textures/grass.jpg"
+          ]
+        }
+        roughness 0.5
+        metalness 0
+        textureTransform TextureTransform {
+          scale 300 300
+        }
+      }
+      geometry Plane {
+        size 280 500
+      }
+    }
+  ]
+  boundingObject USE GRASS_PLANE
+}
+Truck {
+  hidden position_0_0 -7.452442846983136e-09
+  hidden position2_0_0 0.013927323947905195
+  hidden position_0_1 4.147273801074638e-09
+  hidden position2_0_1 0.014347062250543675
+  hidden position_0_2 -0.03367587366902654
+  hidden position_0_3 -0.0332497429333245
+  hidden translation_1 -0.06730059883828082 -4.0063471028890403e-07 -0.0003663174492592124
+  hidden rotation_1 -5.350864539175495e-07 0.9999999999998568 -3.726221423491034e-09 0.01392732394790985
+  hidden translation_2 0.06730074666722148 -4.0063338172645796e-07 -0.00033806877869811897
+  hidden rotation_2 -2.89062847115413e-07 -0.999999999999958 2.073636900537232e-09 0.014347062250532061
+  hidden translation_3 -0.011176762050308256 -7.52350277633022e-08 -0.0006022354168129429
+  hidden rotation_3 0 -1 0 0.033675873669021104
+  hidden translation_4 0.011177017666542043 -7.523502731921211e-08 -0.0005974726004426509
+  hidden rotation_4 0 1 0 0.03324974293333022
+  translation -0.5164704464151806 0.4779555474572935 43.12974258727415
+  rotation 0.9999178315698559 -0.012818489394483275 0.00012821185840393773 0.020310108830613422
+  trailer NULL
+  controller "ros_automobile"
+  controllerArgs "--name=autonomous_truck"
+  sensorsSlotFront [
+    VelodyneVLP-16 {
+    }
+  ]
+  sensorsSlotCenter [
+    InertialUnit {
+    }
+    GPS {
+    }
+  ]
+}
+CurvedRoadSegment {
+  translation -77 0.1 -49
+  rotation 0 1 0 -3.141592653589793
+  width 9
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  curvatureRadius 11
+  totalAngle 1.57
+}
+CurvedRoadSegment {
+  translation -93 0.1 70
+  name "road(1)"
+  width 9
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  curvatureRadius 5
+  totalAngle 0.5
+}
+CurvedRoadSegment {
+  translation -78 0.1 78
+  rotation 0 1 0 3.141592653589793
+  name "road(2)"
+  width 9
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  curvatureRadius 12
+  totalAngle 0.5
+}
+StraightRoadSegment {
+  translation 76 0.1 -60
+  rotation 0 1 0 -1.5708003061004252
+  name "ROAD1"
+  width 9
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 153.2
+}
+StraightRoadSegment {
+  translation -88 0.1 -49
+  name "ROAD1(1)"
+  width 9
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 119
+}
+StraightRoadSegment {
+  translation -90 0.1 78
+  name "ROAD1(2)"
+  width 9
+  numberOfLanes 1
+  rightBorder FALSE
+  leftBorder FALSE
+  length 65
+}
+DEF OBOCHINY Solid {
+  translation 0 0.2 -100
+  children [
+    Shape {
+      geometry Box {
+        size 152 0.01 3.18
+      }
+    }
+  ]
+  name "solid(1)"
+}
+DEF OBOCHINY Solid {
+  translation 42.95 0.2 -65.1
+  children [
+    Shape {
+      geometry Box {
+        size 66.1 0.01 3.18
+      }
+    }
+  ]
+  name "solid(2)"
+}
+DEF OBOCHINY Solid {
+  translation -39.38 0.2 -65.1
+  children [
+    Shape {
+      geometry Box {
+        size 85.69 0.01 3.18
+      }
+    }
+  ]
+  name "solid(4)"
+}
+DEF OBOCHINY Solid {
+  translation 74.4 0.2 -82.6
+  rotation 0 1 0 4.712388966
+  children [
+    Shape {
+      geometry Box {
+        size 38 0.01 3.18
+      }
+    }
+  ]
+  name "solid(3)"
+}
+DEF ASPHALT Solid {
+  translation 0 0.1 -82.5
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.8 0.8 0.8
+        baseColorMap ImageTexture {
+          url [
+            "textures/light_asphalt.jpg"
+          ]
+        }
+        roughness 0.8
+        metalness 0
+        textureTransform TextureTransform {
+          scale 152 38
+        }
+      }
+      geometry Plane {
+        size 152 38
+      }
+    }
+  ]
+  name "solid(5)"
+}
+ParkingLines {
+  translation 16.4 0.2 -82.57999999999997
+  numberOfCarParks 17
+}
+ParkingLines {
+  translation -67.5 0.2 -82.57999999999997
+  numberOfCarParks 27
+}
+ParkingLines {
+  translation 16.4 0.2 -87.23999999999994
+  numberOfCarParks 17
+}
+ParkingLines {
+  translation -67.5 0.2 -87.23999999999994
+  numberOfCarParks 27
+}
+ParkingLines {
+  translation 14 0.2 -71.5
+  numberOfCarParks 18
+}
+ParkingLines {
+  translation 57.079999999999984 0.2 -71.5
+  numberOfCarParks 3
+  carParkWidth 3.2
+}
+ParkingLines {
+  translation 72.77000003150249 0.2 -93.16999980278594
+  rotation 0 0.9999999999999999 0 4.712388966
+  numberOfCarParks 7
+  carParkLength 4.83
+  carParkWidth 3
+}
+ParkingLines {
+  translation -75.72 0.2 -98.31000000000003
+  numberOfCarParks 57
+  carParkLength 4.83
+  carParkWidth 2.515
+}
+ParkingLines {
+  translation -80.7 0.2 -71.46000000000014
+  numberOfCarParks 32
+  carParkLength 4.83
+  carParkWidth 2.515
+}
+Solid {
+  translation 29.049999999999994 3.6499999999999995 -57.08000000000001
+  children [
+    Shape {
+      geometry Box {
+        size 3.55 0.1 6.26
+      }
+    }
+  ]
+  name "solid(6)"
+}

@@ -1,0 +1,11 @@
+
+~/catkin_ws$ source devel/setup.bash
+roscore
+rosrun webots_ros autonomous_truck
+
+~/catkin_ws$ rosrun webots_ros AT_share_gps.py 
+
+(venv) ~/catkin_ws/src/webots_ros/src/server$ flask run --host=192.168.101.100
+
+
+
