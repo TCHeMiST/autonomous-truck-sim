@@ -7,24 +7,6 @@ from std_msgs.msg import String
 from sensor_msgs.msg import NavSatFix
 import math
 
-# def callback(data, args):
-#     sock = args
-#     # rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.longitude)
- 
-#     print("heloo")
-#     c, addr = sock.accept()      
-#     print 'Got connection from', addr 
-#     print(str(data.longitude))
-    
-#     c.send(str(data.longitude))
-#     # c.close() 
-
-# class Location:
-#     def __init__(self):
-#         self.latitude = 0
-#         self.longitude = 0
-#         self.altitude = 0
-  
 def main():
     s = socket.socket()          
     print "Socket successfully created"
