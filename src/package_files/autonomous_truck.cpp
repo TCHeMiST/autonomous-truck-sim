@@ -2,7 +2,7 @@
 
 /*
  * To run gmapping you should start gmapping:
- * rosrun gmapping slam_gmapping scan:=/autonomous_truck/Sick_LMS_291/laser_scan/layer0 _xmax:=30 _xmin:=-30 _ymax:=30 _ymin:=-30
+ * rosrun gmapping slam_gmapping scan:=/autonomous_truck/Velodyne_VLP_16/laser_scan/layer0 _xmax:=30 _xmin:=-30 _ymax:=30 _ymin:=-30
  * _delta:=0.2
  */
 
@@ -35,7 +35,7 @@ static std::vector<std::string> controllerList;
 ros::ServiceClient timeStepClient;
 webots_ros::set_int timeStepSrv;
 
-static const char *motorNames[NMOTORS] = {"left_front_wheel", "right_front_wheel", "left_rear_wheel", "right_rear_wheel"};
+// static const char *motorNames[NMOTORS] = {"left_front_wheel", "right_front_wheel", "left_rear_wheel", "right_rear_wheel"};
 
 static double GPSValues[3] = {0, 0, 0};
 static double inertialUnitValues[4] = {0, 0, 0, 0};
@@ -52,46 +52,46 @@ double gaussian(double x, double mu, double sigma) {
   return (1.0 / (sigma * sqrt(2.0 * M_PI))) * exp(-((x - mu) * (x - mu)) / (2 * sigma * sigma));
 }
 
-void updateSpeed() {
-  // init dynamic variables
-  double leftObstacle = 0.0, rightObstacle = 0.0, obstacle = 0.0;
-  double speeds[NMOTORS];
-  // apply the braitenberg coefficients on the resulted values of the lms291
-  // near obstacle sensed on the left side
-  for (int i = 0; i < halfResolution; ++i) {
-    if (lidarValues[i] < rangeThreshold)  // far obstacles are ignored
-      leftObstacle += braitenbergCoefficients[i] * (1.0 - lidarValues[i] / maxRange);
-    // near obstacle sensed on the right side
-    int j = lms291Resolution - i - 1;
-    if (lidarValues[j] < rangeThreshold)
-      rightObstacle += braitenbergCoefficients[i] * (1.0 - lidarValues[j] / maxRange);
-  }
-  // overall front obstacle
-  obstacle = leftObstacle + rightObstacle;
-  // compute the speed according to the information on
-  // obstacles
-  if (obstacle > OBSTACLE_THRESHOLD) {
-    const double speedFactor = (1.0 - DECREASE_FACTOR * obstacle) * MAX_SPEED / obstacle;
-    speeds[0] = speedFactor * leftObstacle;
-    speeds[1] = speedFactor * rightObstacle;
-    speeds[2] = BACK_SLOWDOWN * speeds[0];
-    speeds[3] = BACK_SLOWDOWN * speeds[1];
-  } else {
-    speeds[0] = MAX_SPEED;
-    speeds[1] = MAX_SPEED;
-    speeds[2] = MAX_SPEED;
-    speeds[3] = MAX_SPEED;
-  }
-  // set speeds
-  for (int i = 0; i < NMOTORS; ++i) {
-    ros::ServiceClient set_velocity_client;
-    webots_ros::set_float set_velocity_srv;
-    set_velocity_client = n->serviceClient<webots_ros::set_float>(std::string("autonomous_truck/") + std::string(motorNames[i]) +
-                                                                  std::string("/set_velocity"));
-    set_velocity_srv.request.value = speeds[i];
-    set_velocity_client.call(set_velocity_srv);
-  }
-}
+// void updateSpeed() {
+//   // init dynamic variables
+//   double leftObstacle = 0.0, rightObstacle = 0.0, obstacle = 0.0;
+//   double speeds[NMOTORS];
+//   // apply the braitenberg coefficients on the resulted values of the lms291
+//   // near obstacle sensed on the left side
+//   for (int i = 0; i < halfResolution; ++i) {
+//     if (lidarValues[i] < rangeThreshold)  // far obstacles are ignored
+//       leftObstacle += braitenbergCoefficients[i] * (1.0 - lidarValues[i] / maxRange);
+//     // near obstacle sensed on the right side
+//     int j = lms291Resolution - i - 1;
+//     if (lidarValues[j] < rangeThreshold)
+//       rightObstacle += braitenbergCoefficients[i] * (1.0 - lidarValues[j] / maxRange);
+//   }
+//   // overall front obstacle
+//   obstacle = leftObstacle + rightObstacle;
+//   // compute the speed according to the information on
+//   // obstacles
+//   if (obstacle > OBSTACLE_THRESHOLD) {
+//     const double speedFactor = (1.0 - DECREASE_FACTOR * obstacle) * MAX_SPEED / obstacle;
+//     speeds[0] = speedFactor * leftObstacle;
+//     speeds[1] = speedFactor * rightObstacle;
+//     speeds[2] = BACK_SLOWDOWN * speeds[0];
+//     speeds[3] = BACK_SLOWDOWN * speeds[1];
+//   } else {
+//     speeds[0] = MAX_SPEED;
+//     speeds[1] = MAX_SPEED;
+//     speeds[2] = MAX_SPEED;
+//     speeds[3] = MAX_SPEED;
+//   }
+//   // set speeds
+//   for (int i = 0; i < NMOTORS; ++i) {
+//     ros::ServiceClient set_velocity_client;
+//     webots_ros::set_float set_velocity_srv;
+//     set_velocity_client = n->serviceClient<webots_ros::set_float>(std::string("autonomous_truck/") + std::string(motorNames[i]) +
+//                                                                   std::string("/set_velocity"));
+//     set_velocity_srv.request.value = speeds[i];
+//     set_velocity_client.call(set_velocity_srv);
+//   }
+// }
 
 void broadcastTransform() {
   static tf::TransformBroadcaster br;
@@ -102,7 +102,7 @@ void broadcastTransform() {
   transform.setRotation(q);
   br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "odom", "base_link"));
   transform.setIdentity();
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link", "autonomous_truck/Sick_LMS_291"));
+  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "base_link", "autonomous_truck/Velodyne_VLP_16"));
 }
 
 void GPSCallback(const sensor_msgs::NavSatFix::ConstPtr &values) {
@@ -137,7 +137,7 @@ void lidarCallback(const sensor_msgs::LaserScan::ConstPtr &scan) {
     areBraitenbergCoefficientsinitialized = true;
   }
 
-  updateSpeed();
+  // updateSpeed();
 }
 
 // catch names of the controllers availables on ROS network
@@ -199,43 +199,43 @@ int main(int argc, char **argv) {
   // leave topic once it is not necessary anymore
   nameSub.shutdown();
 
-  // init motors
-  for (int i = 0; i < NMOTORS; ++i) {
-    // position
-    ros::ServiceClient set_position_client;
-    webots_ros::set_float set_position_srv;
-    set_position_client = n->serviceClient<webots_ros::set_float>(std::string("autonomous_truck/") + std::string(motorNames[i]) +
-                                                                  std::string("/set_position"));
+  // // init motors
+  // for (int i = 0; i < NMOTORS; ++i) {
+  //   // position
+  //   ros::ServiceClient set_position_client;
+  //   webots_ros::set_float set_position_srv;
+  //   set_position_client = n->serviceClient<webots_ros::set_float>(std::string("autonomous_truck/") + std::string(motorNames[i]) +
+  //                                                                 std::string("/set_position"));
 
-    set_position_srv.request.value = INFINITY;
-    if (set_position_client.call(set_position_srv) && set_position_srv.response.success)
-      ROS_INFO("Position set to INFINITY for motor %s.", motorNames[i]);
-    else
-      ROS_ERROR("Failed to call service set_position on motor %s.", motorNames[i]);
+  //   set_position_srv.request.value = INFINITY;
+  //   if (set_position_client.call(set_position_srv) && set_position_srv.response.success)
+  //     ROS_INFO("Position set to INFINITY for motor %s.", motorNames[i]);
+  //   else
+  //     ROS_ERROR("Failed to call service set_position on motor %s.", motorNames[i]);
 
-    // speed
-    ros::ServiceClient set_velocity_client;
-    webots_ros::set_float set_velocity_srv;
-    set_velocity_client = n->serviceClient<webots_ros::set_float>(std::string("autonomous_truck/") + std::string(motorNames[i]) +
-                                                                  std::string("/set_velocity"));
+  //   // speed
+  //   ros::ServiceClient set_velocity_client;
+  //   webots_ros::set_float set_velocity_srv;
+  //   set_velocity_client = n->serviceClient<webots_ros::set_float>(std::string("autonomous_truck/") + std::string(motorNames[i]) +
+  //                                                                 std::string("/set_velocity"));
 
-    set_velocity_srv.request.value = 0.0;
-    if (set_velocity_client.call(set_velocity_srv) && set_velocity_srv.response.success == 1)
-      ROS_INFO("Velocity set to 0.0 for motor %s.", motorNames[i]);
-    else
-      ROS_ERROR("Failed to call service set_velocity on motor %s.", motorNames[i]);
-  }
+  //   set_velocity_srv.request.value = 0.0;
+  //   if (set_velocity_client.call(set_velocity_srv) && set_velocity_srv.response.success == 1)
+  //     ROS_INFO("Velocity set to 0.0 for motor %s.", motorNames[i]);
+  //   else
+  //     ROS_ERROR("Failed to call service set_velocity on motor %s.", motorNames[i]);
+  // }
 
-  // enable Sick lidar
+  // enable Velodyne lidar
   ros::ServiceClient set_lidar_client;
   webots_ros::set_int lidar_srv;
   ros::Subscriber sub_lidar_scan;
 
-  set_lidar_client = n->serviceClient<webots_ros::set_int>("autonomous_truck/Sick_LMS_291/enable");
+  set_lidar_client = n->serviceClient<webots_ros::set_int>("autonomous_truck/Velodyne_VLP_16/enable");
   lidar_srv.request.value = TIME_STEP;
   if (set_lidar_client.call(lidar_srv) && lidar_srv.response.success) {
     ROS_INFO("Lidar enabled.");
-    sub_lidar_scan = n->subscribe("autonomous_truck/Sick_LMS_291/laser_scan/layer0", 10, lidarCallback);
+    sub_lidar_scan = n->subscribe("autonomous_truck/Velodyne_VLP_16/laser_scan/layer0", 10, lidarCallback);
     ROS_INFO("Topic for lidar initialized.");
     while (sub_lidar_scan.getNumPublishers() == 0) {
     }
@@ -328,7 +328,7 @@ int main(int argc, char **argv) {
   set_gyro_client.call(gyro_srv);
 
   ROS_INFO("You can now start the creation of the map using 'rosrun gmapping slam_gmapping "
-           "scan:=/autonomous_truck/Sick_LMS_291/laser_scan/layer0 _xmax:=30 _xmin:=-30 _ymax:=30 _ymin:=-30 _delta:=0.2'.");
+           "scan:=/autonomous_truck/Velodyne_VLP_16/laser_scan/layer0 _xmax:=30 _xmin:=-30 _ymax:=30 _ymin:=-30 _delta:=0.2'.");
   ROS_INFO("You can now visualize the sensors output in rqt using 'rqt'.");
 
   // main loop
