@@ -64,9 +64,12 @@ def main():
                 orientation_list = [orientation_data.orientation.x, orientation_data.orientation.y, orientation_data.orientation.z, orientation_data.orientation.w]
                 (roll, pitch, yaw) = euler_from_quaternion (orientation_list)
 
-                data_string = (str(new_latitude) + " " + str(new_longitude) + " " + str(roll) + " " + str(
-                    pitch) + " " + str(yaw))
+                data_string = (str(new_latitude) + " " + str(new_longitude) + " "
+			+ str(roll) + " " + str(pitch) + " " + str(yaw))
                 print(data_string)
+
+		#data_string = (str(102.195785725-gps_data.latitude) + " " + str(gps_data.longitude) + " "
+		#	+ str(roll) + " " + str(pitch) + " " + str(yaw))
 
                 c.send(data_string)
 
