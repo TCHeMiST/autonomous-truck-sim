@@ -1,0 +1,32 @@
+<launch>
+  <!-- <node name="autonomous_truck" pkg="webots_ros" type="autonomous_truck"/> -->
+
+  <node type="laser_scan_assembler" pkg="laser_assembler"
+        name="my_assembler">
+    <!-- <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer0"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer1"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer2"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer3"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer4"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer5"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer6"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer7"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer8"/>
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer9"/> -->
+    <!-- <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer10"/> -->
+    <!-- <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer11"/> -->
+    <!-- <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer12"/> -->
+    <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer13"/>
+    <!-- <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer14"/> -->
+    <!-- <remap from="scan" to="/autonomous_truck/Velodyne_VLP_16/laser_scan/layer15"/> -->
+    <param name="max_scans" type="int" value="400" />
+    <param name="fixed_frame" type="string" value="autonomous_truck/Velodyne_VLP_16" />
+  </node>
+
+  <!-- <node type="periodic_snapshotter" pkg="laser_assembler" name="periodic_snapshotter"> 
+    <remap from="/cloud" to="cloud"/>   
+    <param name="max_clouds" type="int" value="400" /> 
+    <param name="fixed_frame" type="string" value="base_link" /> 
+  </node> -->
+  <node type ="laser2pc.py" pkg="autonomous_truck" name="laser2pc"/>
+</launch>
