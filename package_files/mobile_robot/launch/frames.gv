@@ -1,0 +1,10 @@
+digraph G {
+"odom" -> "base_link"[label="Broadcaster: /pioneer3at_1562313452055050893\nAverage rate: 31.678 Hz\nMost recent transform: 1562316398.325 ( 0.055 sec old)\nBuffer length: 4.925 sec\n"];
+"map" -> "odom"[label="Broadcaster: /amcl\nAverage rate: 15.837 Hz\nMost recent transform: 1562316398.385 ( -0.005 sec old)\nBuffer length: 4.925 sec\n"];
+"base_link" -> "pioneer3at/Sick_LMS_291"[label="Broadcaster: /pioneer3at_1562313452055050893\nAverage rate: 31.678 Hz\nMost recent transform: 1562316398.325 ( 0.055 sec old)\nBuffer length: 4.925 sec\n"];
+"temp_map" -> "map"[label="Broadcaster: /link1_broadcaster\nAverage rate: 10.193 Hz\nMost recent transform: 1562316398.420 ( -0.041 sec old)\nBuffer length: 4.905 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1562316398.379"[ shape=plaintext ] ;
+ }->"temp_map";
+}
