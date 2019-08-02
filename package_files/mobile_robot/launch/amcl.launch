@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find mobile_robot)/maps/map.yaml">
+    <param name="frame_id" value="map"/>
+  </node>
+
+ <!-- <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 1 0 0 0 map tmap 100" /> -->
+ <!-- <node pkg="tf" type="static_transform_publisher" name="link2_broadcaster" args="0 0 0 1 0 0 0 base_link tbase_link 100" /> -->
+ 
+  <arg name="use_map_topic"   default="true"/>
+  <arg name="scan_topic"      default="pioneer3at/Sick_LMS_291/laser_scan/layer0"/> 
+  <arg name="base_frame_id"   default="base_link"/>
+  <arg name="global_frame_id" default="map"/>  
+
+
+  <node pkg="amcl" type="amcl" name="amcl"  output="screen">
+    <param name="use_map_topic" value="$(arg use_map_topic)"/>
+    <param name="odom_model_type" value="diff"/>
+    <param name="gui_publish_rate" value="10.0"/>
+    <param name="laser_max_beams" value="60"/>
+    <param name="laser_max_range" value="10.0"/>
+    <param name="base_frame_id" value="$(arg base_frame_id)"/>
+    <remap from="scan" to="$(arg scan_topic)"/>
+    <param name="global_frame_id" value="$(arg global_frame_id)"/>
+    <param name="initial_pose_x" value="-229.38"/> 
+    <param name="initial_pose_y" value="-103.81"/> 
+    <param name="initial_pose_z" value="0.099"/>
+    <param name="initial_pose_a" value="-3.84854e-05"/>
+  </node>
+
+
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+   <param name="base_global_planner" value="global_planner/GlobalPlanner" />
+ <param name="GlobalPlanner/use_dijkstra " value="false" />
+    <rosparam file="$(find mobile_robot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find mobile_robot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find mobile_robot)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find mobile_robot)/config/global_costmap_params.yaml" command="load" /> 
+    <rosparam file="$(find mobile_robot)/config/base_local_planner_params.yaml" command="load" />
+
+  </node> 
+    
+</launch>

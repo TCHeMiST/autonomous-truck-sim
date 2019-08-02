@@ -252,3 +252,14 @@ target_link_libraries(autonomous_truck
 #target_link_libraries(cont_laser_assembler
 #    ${catkin_LIBRARIES}
 #)
+
+## Instructions for mobile_robot node
+
+add_executable(mobile_robot src/mobile_robot.cpp)
+
+add_dependencies(mobile_robot webots_ros_generate_messages_cpp)
+
+target_link_libraries(mobile_robot
+	${catkin_LIBRARIES}
+)
+

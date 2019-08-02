@@ -1,0 +1,11 @@
+mobile_robot file should be placed in webots_ros package. Then run:
+$ roscore
+$ rosrun webots_ros mobile_robot 
+
+map and amcl loaded from
+$ roslaunch amcl.launch
+
+
+#rosrun amcl amcl scan:=pioneer3at/Sick_LMS_291/laser_scan/layer0 _base_frame_id:=base_link
+
+ 
